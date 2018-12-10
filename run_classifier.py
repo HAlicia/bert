@@ -196,8 +196,8 @@ class SimProcessor(DataProcessor):
         examples = []
         for index, row in df_train.iterrows():
             guid = 'train-%d' % index
-            text_a = tokenization.convert_to_unicode(row[3])
-            text_b = tokenization.convert_to_unicode(row[4])
+            text_a = tokenization.convert_to_unicode(str(row[3]))
+            text_b = tokenization.convert_to_unicode(str(row[4]))
             label = row[7]
             examples.append(InputExample(guid=guid, text_a=text_a,
                                          text_b=text_b, label=label))
@@ -207,8 +207,8 @@ class SimProcessor(DataProcessor):
         examples = []
         for index, row in self.df_dev.iterrows():
             guid = 'dev-%d' % index
-            text_a = tokenization.convert_to_unicode(row[3])
-            text_b = tokenization.convert_to_unicode(row[4])
+            text_a = tokenization.convert_to_unicode(str(row[3]))
+            text_b = tokenization.convert_to_unicode(str(row[4]))
             label = row[7]
             examples.append(InputExample(guid=guid, text_a=text_a,
                                          text_b=text_b, label=label))
@@ -220,8 +220,8 @@ class SimProcessor(DataProcessor):
         examples = []
         for index, row in df_test.iterrows():
             guid = 'test-%d' % index
-            text_a = tokenization.convert_to_unicode(row[3])
-            text_b = tokenization.convert_to_unicode(row[4])
+            text_a = tokenization.convert_to_unicode(str(row[3]))
+            text_b = tokenization.convert_to_unicode(str(row[4]))
             label = row[7]
             examples.append(InputExample(guid=guid, text_a=text_a,
                                          text_b=text_b, label=label))
