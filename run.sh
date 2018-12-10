@@ -5,7 +5,7 @@ python run_classifier.py \
   --task_name=sim \
   --do_train=true \
   --do_eval=false \
-  --dopredict=true \
+  --do_predict=true \
   --data_dir=$MY_DATASET \
   --vocab_file=$BERT_BASE_DIR/vocab.txt \
   --bert_config_file=$BERT_BASE_DIR/bert_config.json \
