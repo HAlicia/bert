@@ -114,3 +114,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.DS_Store
+chinese_L-12_H-768_A-12
