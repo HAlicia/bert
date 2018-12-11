@@ -4,7 +4,7 @@ export MY_DATASET=./dataset
 python run_classifier.py \
   --task_name=sim \
   --do_train=true \
-  --do_eval=false \
+  --do_eval=true \
   --do_predict=true \
   --data_dir=$MY_DATASET \
   --vocab_file=$BERT_BASE_DIR/vocab.txt \
