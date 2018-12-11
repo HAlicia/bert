@@ -222,7 +222,7 @@ class WSDMProcessor(DataProcessor):
             guid = 'test-%d' % index
             text_a = tokenization.convert_to_unicode(str(row[3]))
             text_b = tokenization.convert_to_unicode(str(row[4]))
-            label = '0'
+            label = 'unrelated'
             examples.append(InputExample(guid=guid, text_a=text_a,
                                          text_b=text_b, label=label))
         return examples
