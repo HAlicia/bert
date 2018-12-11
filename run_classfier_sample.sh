@@ -2,7 +2,7 @@ export BERT_BASE_DIR=./chinese_L-12_H-768_A-12
 export MY_DATASET=./dataset
 
 python run_classifier.py \
-  --task_name=sim \
+  --task_name=wsdm \
   --do_train=true \
   --do_eval=true \
   --do_predict=true \

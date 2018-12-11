@@ -234,9 +234,9 @@ class LOUProcessor(DataProcessor):
     def get_train_examples(self, data_dir):
         file_path = os.path.join(data_dir, 'train.csv')
         df = pd.read_csv(file_path)
-        # df_train, self.df_dev = train_test_split(df, test_size=0.2)
+        df_train, self.df_dev = train_test_split(df, test_size=0.2)
         examples = []
-        for index, row in df.iterrows():
+        for index, row in df_train.iterrows():
             guid = 'train-%d' % index
             text_a = tokenization.convert_to_unicode(str(row[1]))
             label = str(row[2])
@@ -244,15 +244,15 @@ class LOUProcessor(DataProcessor):
                                          text_b=None, label=label))
         return examples
 
-    # def get_dev_examples(self, data_dir):
-    #     examples = []
-    #     for index, row in self.df_dev.iterrows():
-    #         guid = 'dev-%d' % index
-    #         text_a = tokenization.convert_to_unicode(str(row[1]))
-    #         label = str(row[2])
-    #         examples.append(InputExample(guid=guid, text_a=text_a,
-    #                                      text_b=None, label=label))
-    #     return examples
+    def get_dev_examples(self, data_dir):
+        examples = []
+        for index, row in self.df_dev.iterrows():
+            guid = 'dev-%d' % index
+            text_a = tokenization.convert_to_unicode(str(row[1]))
+            label = str(row[2])
+            examples.append(InputExample(guid=guid, text_a=text_a,
+                                         text_b=None, label=label))
+        return examples
 
     def get_test_examples(self, data_dir):
         file_path = os.path.join(data_dir, 'test.csv')
