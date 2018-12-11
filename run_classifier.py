@@ -261,7 +261,7 @@ class LOUProcessor(DataProcessor):
         for index, row in df_test.iterrows():
             guid = 'test-%d' % index
             text_a = tokenization.convert_to_unicode(str(row[1]))
-            label = 'none'
+            label = '-2'
             examples.append(InputExample(guid=guid, text_a=text_a,
                                          text_b=None, label=label))
         return examples
