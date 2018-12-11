@@ -261,9 +261,9 @@ class LOUProcessor(DataProcessor):
         for index, row in df_test.iterrows():
             guid = 'test-%d' % index
             text_a = tokenization.convert_to_unicode(str(row[1]))
-            #label = str()
+            label = str('0')
             examples.append(InputExample(guid=guid, text_a=text_a,
-                                         text_b=None, label=None))
+                                         text_b=None, label=label))
         return examples
 
     def get_labels(self):
