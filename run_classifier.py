@@ -195,7 +195,6 @@ class WSDMProcessor(DataProcessor):
         df['title1_zh'] = df['title1_zh'] + df['title1_en']
         df['title2_zh'] = df['title2_zh'] + df['title2_en']
         df = df.drop(df[df['tid1']-df['tid2']==0].index)
-        df = df[:1000]
         # df_train, self.df_dev = train_test_split(df, test_size=0.2)
         examples = []
         for index, row in df.iterrows():
