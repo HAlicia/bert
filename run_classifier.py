@@ -220,6 +220,8 @@ class WSDMProcessor(DataProcessor):
     def get_test_examples(self, data_dir):
         file_path = os.path.join(data_dir, 'test.csv')
         df_test = pd.read_csv(file_path)
+        df_test['title1_zh'] = df_test['title1_zh'] + df_test['title1_en']
+        df_test['title2_zh'] = df_test['title2_zh'] + df_test['title2_en']
         examples = []
         for index, row in df_test.iterrows():
             guid = 'test-%d' % index
