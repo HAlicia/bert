@@ -192,8 +192,6 @@ class WSDMProcessor(DataProcessor):
     def get_train_examples(self, data_dir):
         file_path = os.path.join(data_dir, 'train.csv')
         df = pd.read_csv(file_path)
-        df['title1_zh'] = df['title1_zh'] + df['title1_en']
-        df['title2_zh'] = df['title2_zh'] + df['title2_en']
         df = df.drop(df[df['tid1']-df['tid2']==0].index)
         # df_train, self.df_dev = train_test_split(df, test_size=0.2)
         examples = []
@@ -220,8 +218,6 @@ class WSDMProcessor(DataProcessor):
     def get_test_examples(self, data_dir):
         file_path = os.path.join(data_dir, 'test.csv')
         df_test = pd.read_csv(file_path)
-        df_test['title1_zh'] = df_test['title1_zh'] + df_test['title1_en']
-        df_test['title2_zh'] = df_test['title2_zh'] + df_test['title2_en']
         examples = []
         for index, row in df_test.iterrows():
             guid = 'test-%d' % index
