@@ -119,3 +119,4 @@ chinese_L-12_H-768_A-12
 dataset/output
 dataset/train.csv
 dataset/test.csv
+.vscode/
