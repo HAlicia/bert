@@ -192,14 +192,13 @@ class WSDMProcessor(DataProcessor):
     def get_train_examples(self, data_dir):
         file_path = os.path.join(data_dir, 'train.csv')
         df = pd.read_csv(file_path)
-        df = df.drop(df[df['tid1']-df['tid2']==0].index)
         # df_train, self.df_dev = train_test_split(df, test_size=0.2)
         examples = []
         for index, row in df.iterrows():
             guid = 'train-%d' % index
-            text_a = tokenization.convert_to_unicode(str(row[3]))
-            text_b = tokenization.convert_to_unicode(str(row[4]))
-            label = row[7]
+            text_a = tokenization.convert_to_unicode(str(row[0]))
+            text_b = tokenization.convert_to_unicode(str(row[1]))
+            label = row[2]
             examples.append(InputExample(guid=guid, text_a=text_a,
                                          text_b=text_b, label=label))
         return examples
@@ -221,8 +220,8 @@ class WSDMProcessor(DataProcessor):
         examples = []
         for index, row in df_test.iterrows():
             guid = 'test-%d' % index
-            text_a = tokenization.convert_to_unicode(str(row[3]))
-            text_b = tokenization.convert_to_unicode(str(row[4]))
+            text_a = tokenization.convert_to_unicode(str(row[0]))
+            text_b = tokenization.convert_to_unicode(str(row[1]))
             label = 'unrelated'
             examples.append(InputExample(guid=guid, text_a=text_a,
                                          text_b=text_b, label=label))
