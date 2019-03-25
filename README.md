@@ -4,8 +4,8 @@
 
 This project is a modified version of [google-research/bert](https://github.com/google-research/bert), adapted under the [original license](https://github.com/google-research/bert/blob/master/LICENSE) for educational purposes.
 
-### 使用方法 Useage
+### 使用方法
 
 ```bash
-sh wsdm_run.sh
+bash wsdm_run.sh
 ```
