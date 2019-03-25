@@ -21,3 +21,6 @@ python run_classifier.py \
   --learning_rate=5e-5 \
   --num_train_epochs=1.0 \
   --output_dir=./dataset/output
+
+echo "计算测试集准确度"
+python cal_accuracy.py
