@@ -1,6 +1,12 @@
+echo "下载预训练模型"
+wget -nc https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip
+unzip -o chinese_L-12_H-768_A-12.zip
+
+echo "添加环境变量"
 export BERT_BASE_DIR=./chinese_L-12_H-768_A-12
 export MY_DATASET=./dataset
 
+echo "开始执行"
 python run_classifier.py \
   --task_name=wsdm \
   --do_train=true \
