@@ -223,7 +223,7 @@ class WSDMProcessor(DataProcessor):
 
     # 测试集
     def get_test_examples(self, data_dir):
-        self.df_test.to_csv("./dataset/test.csv", index=None)
+        self.df_test.to_csv("test.csv", index=None)
         examples = []
         for index, row in self.df_test.iterrows():
             guid = 'test-%d' % index
