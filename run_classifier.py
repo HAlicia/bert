@@ -578,14 +578,14 @@ def file_based_convert_examples_to_features(
       return f
 
     features = collections.OrderedDict()
-    print(feature.segment_ids)
-    print(feature.label_id)
+    # print(feature.segment_ids)
+    # print(feature.label_id)
     features["input_ids"] = create_int_feature(feature.input_ids)
     features["input_mask"] = create_int_feature(feature.input_mask)
     features["segment_ids"] = create_int_feature(feature.segment_ids)
     features["label_ids"] = create_int_feature(feature.label_id)
-    print(features["segment_ids"])
-    print(features["label_ids"])
+    # print(features["segment_ids"])
+    # print(features["label_ids"])
     features["is_real_example"] = create_int_feature(
         [int(feature.is_real_example)])
 
